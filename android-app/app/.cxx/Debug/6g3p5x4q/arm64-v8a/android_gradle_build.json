@@ -1,0 +1,38 @@
+{
+  "buildFiles": [
+    "/Users/prathima/Desktop/Shyam/FedEdge-Async/android-app/app/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/opt/homebrew/share/android-commandlinetools/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Users/prathima/Desktop/Shyam/FedEdge-Async/android-app/app/.cxx/Debug/6g3p5x4q/arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/opt/homebrew/share/android-commandlinetools/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Users/prathima/Desktop/Shyam/FedEdge-Async/android-app/app/.cxx/Debug/6g3p5x4q/arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "fededge_engine::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "fededge_engine",
+      "output": "/Users/prathima/Desktop/Shyam/FedEdge-Async/android-app/app/build/intermediates/cxx/Debug/6g3p5x4q/obj/arm64-v8a/libfededge_engine.so",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "/opt/homebrew/share/android-commandlinetools/ndk/25.1.8937393/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang.lld",
+      "cppCompilerExecutable": "/opt/homebrew/share/android-commandlinetools/ndk/25.1.8937393/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++.lld"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}
