@@ -1,0 +1,4 @@
+/opt/homebrew/share/android-commandlinetools/cmake/3.22.1/bin/ninja \
+  -C \
+  /Users/prathima/Desktop/Shyam/FedEdge-Async/android-app/app/.cxx/Debug/6g3p5x4q/armeabi-v7a \
+  fededge_engine
