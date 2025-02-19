@@ -1,0 +1,94 @@
+syntax = "proto3";
+
+package fededge;
+
+option java_multiple_files = true;
+option java_package = "com.fededge.grpc";
+option java_outer_classname = "FedEdgeProto";
+
+// Phase 0: Schema definition matching C++ track
+
+enum CompressionType {
+  FP32 = 0;
+  FP16 = 1;
+  INT8 = 2;
+  SPARSE = 3;
+}
+
+message DeviceMetrics {
+  float battery_level = 1;
+  string thermal_state = 2;
+  bool is_metered_network = 3;
+}
+
+message RegisterClientRequest {
+  string device_type = 1;
+  string capability_json = 2;
+}
+
+message RegisterClientResponse {
+  string client_id = 1;
+  int32 protocol_version = 2;
+}
+
+message GetTrainingJobRequest {
+  string client_id = 1;
+  DeviceMetrics metrics = 2;
+  bytes client_public_key = 3; // For Diffie-Hellman Secure Aggregation
+}
+
+message GetTrainingJobResponse {
+  string job_id = 1;
+  int64 global_model_version = 2;
+  string model_download_url = 3; // For blobs stored externally later
+  bytes server_public_key = 4; // For Diffie-Hellman Secure Aggregation
+}
+
+message ModelUpdate {
+  string client_id = 1;
+  int64 base_model_version = 2;
+  string model_hash = 3;
+  int32 sample_count = 4;
+  int32 local_steps = 5;
+  float training_loss = 6;
+  float local_accuracy = 7;
+  DeviceMetrics device_metrics = 8;
+  CompressionType compression_type = 9;
+  string privacy_config_id = 10;
+  bytes update_payload = 11;
+  string payload_hash = 12;
+  int64 timestamp = 13;
+  int32 protocol_version = 14;
+  bytes client_public_key = 15; // Diffie-Hellman public key for this update
+}
+
+message SubmitUpdateResponse {
+  bool accepted = 1;
+  string reason = 2;
+}
+
+message HeartbeatRequest {
+  string client_id = 1;
+}
+
+message HeartbeatResponse {
+  bool ok = 1;
+}
+
+message GetGlobalModelRequest {
+  string client_id = 1;
+}
+
+message GetGlobalModelResponse {
+  int64 version = 1;
+  bytes model_payload = 2;
+  string hash = 3;
+}
+
+service FederatedCoordinator {
+  rpc RegisterClient(RegisterClientRequest) returns (RegisterClientResponse);
+  rpc GetTrainingJob(GetTrainingJobRequest) returns (GetTrainingJobResponse);
+  rpc SubmitUpdate(ModelUpdate) returns (SubmitUpdateResponse);
+  rpc Heartbeat(HeartbeatRequest) returns (HeartbeatResponse);
+  rpc GetGlobalModel(GetGlobalModelRequest) returns (GetGlobalModelResponse);
+}
