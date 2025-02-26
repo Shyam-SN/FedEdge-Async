@@ -1,0 +1,2 @@
+ninja: Entering directory `/Users/prathima/Desktop/Shyam/FedEdge-Async/android-app/app/.cxx/Debug/6g3p5x4q/x86'
+ninja: no work to do.
