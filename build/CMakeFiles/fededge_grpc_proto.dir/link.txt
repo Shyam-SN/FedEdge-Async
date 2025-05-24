@@ -1,0 +1,2 @@
+/usr/bin/ar qc libfededge_grpc_proto.a CMakeFiles/fededge_grpc_proto.dir/generated/fededge.pb.cc.o CMakeFiles/fededge_grpc_proto.dir/generated/fededge.grpc.pb.cc.o
+/usr/bin/ranlib libfededge_grpc_proto.a
