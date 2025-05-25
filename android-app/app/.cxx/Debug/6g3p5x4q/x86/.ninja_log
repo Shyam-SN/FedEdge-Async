@@ -1,0 +1,7 @@
+# ninja log v5
+0	4	0	clean	c519a6ac5911603
+0	21	1786878402866426268	build.ninja	4a259ba37de74d6e
+0	279	1786872364803411905	CMakeFiles/fededge_engine.dir/Users/prathima/Desktop/Shyam/FedEdge-Async/src/JNIWrapper.cpp.o	e28764541c3585cc
+280	328	1786872364850939944	../../../../build/intermediates/cxx/Debug/6g3p5x4q/obj/x86/libfededge_engine.so	2d3bb930d355b1d9
+1	246	1786878403123974386	CMakeFiles/fededge_engine.dir/Users/prathima/Desktop/Shyam/FedEdge-Async/src/JNIWrapper.cpp.o	e28764541c3585cc
+246	292	1786878403167182379	../../../../build/intermediates/cxx/Debug/6g3p5x4q/obj/x86/libfededge_engine.so	2d3bb930d355b1d9
